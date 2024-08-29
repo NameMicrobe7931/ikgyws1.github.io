@@ -1,66 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirect Test</title>
+    <title>WEB ERR</title>
 </head>
 
 <body>
-    <script>
-        // Function to test target URL using telnet asynchronously
-        function testURL(url) {
-            return new Promise((resolve, reject) => {
-                let xhr = new XMLHttpRequest();
-                xhr.open('GET', url, true);
-                xhr.timeout = 3000; // Timeout set to 3 seconds
-
-                xhr.onload = function () {
-                    if (xhr.status >= 200 && xhr.status < 300) {
-                        resolve('HTTP Status: ' + xhr.status);
-                    } else {
-                        reject('HTTP Status: ' + xhr.status);
-                    }
-                };
-
-                xhr.onerror = function () {
-                    reject('Error connecting to the server');
-                };
-
-                xhr.ontimeout = function () {
-                    reject('Timeout');
-                };
-
-                xhr.send();
-            });
-        }
-
-        // Wait for 5 seconds
-        setTimeout(() => {
-            // Test the target URL using telnet
-            testURL("https://123.com")
-                .then((response) => {
-                    // If there is a response, redirect based on user agent
-                    let userAgent = navigator.userAgent;
-                    if (/Android/i.test(userAgent) || /iPhone|iPad|iPod/i.test(userAgent)) {
-                        window.location.replace("https://pc.ikgy.fun:39880");
-                    } else {
-                        window.location.replace("https://alist.iknbds.top:10180");
-                    }
-                })
-                .catch((error) => {
-                    // If no response, redirect to default URLs
-                    let userAgent = navigator.userAgent;
-                    if (/Android/i.test(userAgent) || /iPhone|iPad|iPod/i.test(userAgent)) {
-                        window.location.replace("https://baidu.com");
-                    } else {
-                        window.location.replace("https://bing.com");
-                    }
-                });
-        }, 5000);
-    </script>
+    <div style="text-align: center;">
+        <img src="https://s21.ax1x.com/2024/08/29/pAARpcD.jpg" alt="Image Description">
+        <h1>网站被吃了，站长正在抢修中QwQ</h1>
+    </div>
 </body>
 
 </html>
